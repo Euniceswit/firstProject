@@ -5,13 +5,40 @@
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
+  <h2>Systemspecs Validation Engine</h2>
+  
+   <form (ngSubmit)="getStatusForm()" #form>
+  
+      <ion-list>
+        
+        <ion-item>
+          <ion-label>Corporate Name</ion-label>
+          <ion-select [(ngModel)]="getStatus.corpName" name="corpName">
+            <ion-option value="SYSP">SystemSpecs Limited</ion-option>
+            <ion-option value="CAC">Corporate Affairs Commision</ion-option>
+            <ion-option value="FPNASARAWA">Federal Polytechnic Nasarawa</ion-option>
+            <ion-option value="UNIBEN">University of Benin</ion-option>
+            <ion-option value="JAMB">Joint Admissions and Matriculations Board </ion-option>
+            <ion-option value="NYSC">National Youth Service Corps</ion-option>
+            <ion-option value="KGSU">Kogi State University</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label fixed>RRR</ion-label>
+          <ion-input type="numeric" value="" name="rrr" [(ngModel)]="getStatus.rrr"></ion-input>
+        </ion-item>
+          <ion-item>
+            <button ion-button full>Check Status</button>
+          </ion-item>
+        
+        </ion-list>
+     
+   </form>
+
   <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
+    {{form.value}}
+    {{this.merchantId}}
+    {{this.apiKey}}
+    {{hashString}}
   </p>
 </ion-content>
